@@ -1,7 +1,7 @@
 import os
 import json
 from preprocess import process_audio
-from gemini_client import get_forensic_analysis
+from client import get_forensic_analysis
 
 def main():
     INPUT_DIR = "data/Fake"

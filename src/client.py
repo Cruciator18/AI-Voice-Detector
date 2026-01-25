@@ -1,3 +1,4 @@
+
 import os
 from dotenv import load_dotenv
 from google import genai
@@ -22,7 +23,7 @@ def get_forensic_analysis(audio_path):
             Provide a strict DECISION and CONFIDENCE.
             """
 
-    # Generate content using the 'Native Audio' model
+    
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=[prompt, audio_file]
@@ -31,9 +32,5 @@ def get_forensic_analysis(audio_path):
     return response.text
 
 if __name__ == "__main__":
-    # Test with a processed file
-    # print(get_forensic_analysis("processed/clean_sample.wav"))
+   
     pass
-
-
-
