@@ -31,8 +31,7 @@ def get_forensic_analysis(audio_path):
     return response.text
 
 if __name__ == "__main__":
-    # Test with a processed file
-    # print(get_forensic_analysis("processed/clean_sample.wav"))
+   
     pass
 
 
