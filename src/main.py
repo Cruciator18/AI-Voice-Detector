@@ -12,7 +12,7 @@ def main():
         os.makedirs(INPUT_DIR)
         return
 
-    # Load existing results if they exist (so we don't lose them)
+   
     if os.path.exists(REPORT_FILE):
         with open(REPORT_FILE, "r") as f:
             results = json.load(f)
@@ -32,7 +32,7 @@ def main():
         try:
             clean_path = process_audio(raw_path, PROCESSED_DIR)
             
-            # UPDATED PROMPT: More aggressive toward SOTA AI
+            
             aggressive_prompt = """
             CRITICAL ANALYSIS: This audio may be a high-end AI clone (e.g., ElevenLabs).
             Do not be fooled by 'breathing' or 'natural pauses,' as advanced AI now simulates these.
@@ -47,7 +47,8 @@ def main():
             
             analysis = get_forensic_analysis(clean_path) # Pass prompt if you modified the client
             
-            # Save immediately
+
+    
             results.append({"file": filename, "analysis": analysis})
             with open(REPORT_FILE, "w") as f:
                 json.dump(results, f, indent=4)
